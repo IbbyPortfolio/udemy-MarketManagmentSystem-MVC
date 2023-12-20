@@ -1,0 +1,48 @@
+﻿@model SalesViewModel
+@section title
+{
+    <div class="row">
+            <div class="col-7">
+                <h3>
+                    Casher's Console
+                </h3>
+            <div class="col-2"><label>Cashier Name:</label></div>
+            <div class="col-3">
+                @*Display Cashier name her*@
+            </div>
+        </div>
+    </div>
+}
+
+
+<br />
+<div class="row">
+    <div class="col-4">
+        <div class="text-danger" asp-validation-summary="All"></div>
+        @* Category selection *@
+        <select asp-for="SelectedCategoryId" class="form-control">
+            <option>- Please Select -</option>
+            @if (Model.Categories != null && Model.Categories.Count() > 0)
+            {
+                @foreach (var cat in Model.Categories)
+                {
+                    <option value="@cat.CategoryId">@cat.Name</option>
+                }
+            }
+        </select>
+        <br />
+        <div id="productsPartial">
+            @* Product List *@
+        </div>
+        <br />
+        <div id="productDetailPartial">
+            @* Product Details *@
+        </div>
+        @* Sales form *@
+        
+    </div>
+    <div class="col">
+        @* List of transactions *@
+
+    </div>
+</div>

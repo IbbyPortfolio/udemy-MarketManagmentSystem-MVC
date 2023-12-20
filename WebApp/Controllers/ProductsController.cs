@@ -71,4 +71,11 @@ public class ProductsController : Controller
 
 
     }
+
+    public IActionResult ProductByCategoryPartial(int categoryId)
+    {
+        var products = ProductsRepository.GetProductByCategoryId(categoryId);
+
+        return PartialView("_Products",products);
+    }
 }
