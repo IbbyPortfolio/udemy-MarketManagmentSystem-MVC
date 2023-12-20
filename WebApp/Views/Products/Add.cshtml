@@ -1,0 +1,15 @@
+﻿@model ProductViewModel
+
+@{
+    string action = ViewBag.Action ?? string.Empty;
+}
+
+@section title{
+    <h3> Add Product</h3>
+}
+@if (Model != null)
+{
+
+    <partial name="_Product" model="Model" />
+
+}
